@@ -1,0 +1,36 @@
+// build.gradle
+
+plugins {
+    id 'groovy'
+    id 'org.springframework.boot' version '1.5.9.RELEASE'
+}
+
+repositories {
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
+}
+
+dependencies {
+    compile('org.codehaus.groovy:groovy-all:2.4.+')
+    compile('org.springframework.boot:spring-boot-starter-web')
+
+    //Agregando información de GORM
+    compile("org.grails:gorm-hibernate5-spring-boot:6.1.8.RELEASE")
+    compile "org.hibernate:hibernate-core:5.1.0.Final"
+    compile "org.hibernate:hibernate-ehcache:5.1.0.Final"
+    runtime "com.h2database:h2:1.4.192"
+    runtime "org.apache.tomcat:tomcat-jdbc:8.5.0"
+    runtime "org.apache.tomcat.embed:tomcat-embed-logging-log4j:8.5.0"
+
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+jar {
+    baseName = 'myapp'
+    version = '0.0.1-SNAPSHOT'
+}
+
+springBoot {
+    // Main class of @SpringBootApplication
+    mainClass = 'xyz.somniumproject.LoginDemoApplication'
+}
