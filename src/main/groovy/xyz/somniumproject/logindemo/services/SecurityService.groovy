@@ -22,6 +22,10 @@ class SecurityService {
                 } else {
                     mobileReturn.name = user.name
                     mobileReturn.token = Base64.encoder.encode(user.password.bytes)
+                    mobileReturn.profiles = new ArrayList<>()
+                    user.profiles.each {
+                        mobileReturn.profiles.add(it.description)
+                    }
                 }
                 return mobileReturn
 
