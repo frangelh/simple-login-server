@@ -5,18 +5,19 @@ import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
-import xyz.somniumproject.logindemo.configuracion.BootStrap
+import xyz.somniumproject.logindemo.configuration.BootStrap
 
 @SpringBootApplication
-class LoginDemoApplication implements ApplicationRunner{
-	@Autowired
-	BootStrap bootStrap;
-	static void main(String[] args) {
-		SpringApplication.run (LoginDemoApplication, args)
-	}
+class LoginDemoApplication implements ApplicationRunner {
+    @Autowired
+    BootStrap bootStrap
 
-	@Override
-	void run(ApplicationArguments args) throws Exception {
-		bootStrap.init()
-	}
+    static void main(String[] args) {
+        SpringApplication.run(LoginDemoApplication, args)
+    }
+
+    @Override
+    void run(ApplicationArguments args) throws Exception {
+        bootStrap.init()
+    }
 }
