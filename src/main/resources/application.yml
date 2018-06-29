@@ -15,11 +15,6 @@ hibernate:
         use_query_cache: false
         region.factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
 
-#Configuración propia del sistema.
-avathartech:
-    app:
-        nombre: Formulario de Conocimiento
-
 #Configuración para H2
 spring:
     datasource:
