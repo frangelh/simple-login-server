@@ -31,7 +31,7 @@ class SecurityController {
         try {
             MobileUserCommand usr = securityService.userAuth(user, password)
             retorno.user = usr
-            retorno.message = new Message(false, "Autenticado Correctamente")
+            retorno.message = new Message(false, "Auth went good!")
         } catch (CustomException e) {
             retorno.message = new Message(true, e.messageText)
         }
